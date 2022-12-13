@@ -1,13 +1,167 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --bg: #ffff;
+  --text: #000;
+  --text-sec: rgb(3, 173, 173);
+  --text-light: rgb(0, 207, 207);
+  --border: rgb(33, 35, 35);
+  --form-bg: rgb(255, 255, 255);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+[data-theme="dark"] {
+  --text: #ffff;
+  --text-sec: rgb(3, 173, 173);
+  --text-light: rgb(0, 207, 207);
+  --border: rgb(88, 92, 92);
+  --form-bg: rgb(35, 37, 37);
+  --bg: rgb(35, 36, 36);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  margin-inline: 0.5rem;
+  color: var(--text-sec);
+  transition: 3s ease-in-out;
+}
+
+.icon:hover {
+  color: var(--text-light);
+}
+
+a {
+  color: var(--text-sec);
+}
+
+.App {
+  background-color: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 0.8rem;
+  transition: all 0.5s;
+}
+
+.login h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 2.2rem 0;
+}
+
+.toggle_theme h2 {
+  text-align: center;
+  padding: 0.4rem;
+}
+
+.toggle_icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.toggle_theme {
+  text-align: center;
+  margin: 2rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  width: 13rem;
+  margin: auto;
+  box-shadow: 0 0 7px var(--border);
+  border-radius: 5px;
+  background-color: var(--form-bg);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  text-align: center;
+  line-height: 0.01rem;
+  border-bottom: 1px solid var(--text);
+  margin: 1rem 0;
+}
+
+.divider span {
+  background-color: var(--form-bg);
+  padding: 0 10px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 8px 0;
+  font-weight: 800;
+}
+
+input {
+  padding: 3px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+input::placeholder {
+  font-size: smaller;
+}
+
+input[type="checked"]:checked {
+  margin: 0;
+  padding: 0;
+}
+
+.remember {
+  display: flex;
+  text-align: center;
+}
+
+.remember p {
+  padding-left: 3px;
+}
+
+.login_btn {
+  background-color: var(--text-sec);
+  border-radius: 5px;
+  font-weight: 900;
+  padding: 4px;
+  margin: 12px 0;
+  color: #ffff;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.6rem;
+}
+
+.create_acc {
+  font-weight: 800;
+  font-size: 0.9rem;
+  margin: 5px 0;
+  cursor: pointer;
 }
